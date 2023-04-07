@@ -1,0 +1,54 @@
+@use '../config/index' as *;
+
+/* ============ Social media links ============== */
+.follow{
+    position: fixed;
+    top: 25%;
+    left: 5%;
+    // &__socials{
+    //     position: absolute;
+    //     top: 1.8rem;
+    //     left: 5%;
+    //     align-items: center;
+    // }
+    &__logo-icon{
+        width: 60px;
+        height: 60px;
+        background-color: $primary-color;
+        border-radius: 50%;
+        margin-bottom: $mb-0-75;
+    }
+    &__logo-icon-img{
+        padding: 30% 20% 20% 20%;
+    }
+    // &____socials-follow{
+    //     font-weight: var($h3-font-size);
+    //     position: relative;
+    // }
+    // &____socials-follow{
+    //     content: '';
+    //     position: absolute;
+    //     width: 1rem;
+    //     height: 2px;
+    //     background-color: var(--text-color);
+    //     right: -45%;
+    //     top: 50%;
+    // }
+    &__social-links{
+        position: absolute;
+        left: 30%;  
+    }
+    &__socials-link{
+        font-size: $big-icon-size;
+        color: $primary-color;
+        transition: 0.3s;
+        display: block;
+        padding-top: $mb-0-75;
+    }
+    &__socials-link:hover{
+        transform: translateY(.25rem);
+    }
+    &__profile-img{
+        padding: 0;
+    }
+}

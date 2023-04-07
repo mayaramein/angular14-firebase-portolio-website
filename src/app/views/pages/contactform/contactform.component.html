@@ -1,0 +1,128 @@
+<section id="contact" class="w-screen relative z-10 overflow-hidden py-20 lg:py-[30px]">
+    <div class="-mx-4 flex flex-wrap">
+      <div class="w-full px-4">
+        <div class="mx-auto max-w-[400px] text-center">
+          <span class="text-blackColor mb-2 block text-lg font-semibold">
+            Contact
+          </span>
+          <h2
+            class="primary-color mb-6 text-3xl font-bold sm:text-4xl md:text-[40px]"
+          >
+          Have a Project ?
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div class="container px-12 mx-auto">
+      <div class="flex flex-wrap lg:justify-between items-center">
+        <div class="w-full px-4 lg:w-2/3 xl:w-5/12">
+          <div class="mb-12 lg:mb-0">
+            <h2
+              class="mb-6 text-[32px] font-bold uppercase sm:text-[40px] lg:text-[36px] xl:text-[40px]"
+            >
+              Lets discuss your next success
+            </h2>
+            <div class="mb-8 flex w-full max-w-[370px]">
+              <div
+                class="r-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden sm:h-[70px] sm:max-w-[70px]"
+              >
+              <i class="primary-color fa-solid fa-envelope text-xl"></i>
+              </div>
+              
+              
+              <div class="w-full">
+                <h4 class="primary-color mb-1 text-xl font-bold">Email Address</h4>
+                <a href = "mailto: mayaramein@outlook.com" class="text-body-color text-base hover:underline hover:underline-offset-[8px]">
+                mayaramein@outlook.com
+                </a>
+              </div>
+            </div>
+            <div class="mb-8 flex w-full max-w-[370px]">
+              <div
+                class="r-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden sm:h-[70px] sm:max-w-[70px]"
+              >
+              <i class="primary-color fa-brands fa-linkedin text-2xl"></i>
+              </div>
+              <div class="w-full">
+                <h4 class="primary-color mb-1 text-xl font-bold">LinkedIn</h4>
+                <a href="https://www.linkedin.com/in/mayaramein/" target="_blank" class="text-base hover:underline hover:underline-offset-[8px]">@mayaramein</a>
+              </div>
+            </div>
+            <div class="mb-8 flex w-full max-w-[370px]">
+              <div
+                class="r-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden sm:h-[70px] sm:max-w-[70px]"
+              >
+              <i class="primary-color fa-brands fa-whatsapp text-2xl"></i>
+              </div>
+              <div class="w-full">
+                <h4 class="primary-color mb-1 text-xl font-bold">Phone Number</h4>
+                <a href = "https://wa.link/8fyewm" target="_blank" class="text-base hover:underline hover:underline-offset-[8px]">
+                [+20] 102 954 5294
+                </a>
+              </div>
+            </div>
+            <div class="mb-8 flex w-full max-w-[370px]">
+              <div
+                class="r-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden sm:h-[70px] sm:max-w-[70px]"
+              >
+              <i class="primary-color text-xl fa-brands fa-facebook-messenger"></i>
+              </div>
+              <div class="w-full">
+                <h4 class="primary-color mb-1 text-xl font-bold">Massenger</h4>
+                <a href="https://www.facebook.com/mayaramein" target="_blank" class="text-base hover:underline hover:underline-offset-[8px]">m.me/mayaramein</a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full mr-3 px-4 lg:w-1/3 xl:w-6/12">
+          <div class="relative rounded-lg bg-white p-3 shadow-lg sm:p-6">
+            <form [formGroup]="contactForm" class="m-3" (ngSubmit)="submitContactData()" action="https://mailthis.to/mayaramein" method="POST" encType="multipart/form-data">
+              <div class="mb-3">
+                <input placeholder="Name" type="text" formControlName="title" class="form-control p-2 text-body-color border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none" id="title" title="title"
+                  [class.is-invalid]="title?.invalid" [class.is-valid]="title?.valid">
+                <div class="" [hidden]="title?.valid || title?.untouched">
+                  <small *ngIf="title?.errors?.['required']">
+                    Name is required
+                  </small>
+                </div>
+              </div>
+              <div class="mb-3">
+                <input placeholder="Email" type="text" formControlName="email" class="form-control p-2 text-body-color border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none" id="email" title="email"
+                  [class.is-invalid]="email?.invalid" [class.is-valid]="email?.valid">
+                <div class="" [hidden]="email?.valid || email?.untouched">
+                  <small *ngIf="email?.errors?.['required']">
+                    Email is required
+                  </small>
+                  <small *ngIf="email?.errors?.['email']">
+                    Email is required
+                  </small>
+                </div>
+              </div>
+              <div class="mb-3">
+                <input placeholder="Phone number" type="number" formControlName="phone" class="form-control p-2 text-body-color border-[f0f0f0] focus:border-primary w-full rounded border py-3 px-[14px] text-base outline-none focus-visible:shadow-none" id="phone" title="message"
+                  [class.is-invalid]="phone?.invalid" [class.is-valid]="phone?.valid">
+                <div class="" [hidden]="phone?.valid || phone?.untouched">
+                  <small *ngIf="phone?.errors?.['required']">
+                    Phone number is required
+                  </small>
+                </div>
+              </div>
+              <div class="mb-3">
+                <textarea placeholder="Message" class="form-control p-2 border text-body-color border-[f0f0f0] focus:border-primary w-full resize-none rounded  py-3 px-[14px] text-base outline-none focus-visible:shadow-none" formControlName="message" id="exampleFormControlTextarea1" title="message"
+                  rows="5" cols="45" [class.is-invalid]="message?.invalid" [class.is-valid]="message?.valid"></textarea>
+                <div class="" [hidden]="message?.valid || message?.untouched">
+                  <small *ngIf="message?.errors?.['required']">
+                    Message is required
+                  </small>
+                </div>
+              </div>
+              <button type="submit" class="primary-color font-bold border-primary-color w-full rounded p-3 hover:underline hover:underline-offset-[8px]">Let's Talk</button>
+            </form>
+      
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

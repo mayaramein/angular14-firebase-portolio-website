@@ -1,0 +1,46 @@
+@use '../config/index' as *;
+
+.project-1{
+    max-width: 400px;
+    &__feedback{
+        background-color: $white-color;
+        height: 90%;
+        top: 20px;
+        box-shadow: $box-shadow;
+        border-radius: 30px;
+        position: relative;
+    }
+    &__emoji{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 25%;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        overflow: hidden;
+    }
+    &__rating{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 30%;
+    }
+    &__far{
+        margin: 1px;
+        transform: translateX(0);
+        transition: 0.2s;
+    }
+    &__fa-star{
+        color: $primary-color;
+        cursor: pointer;
+    }
+    
+    &__fa-star :hover{
+        color: $secondary-color;
+    }
+    &__fa-star .active{
+        color: $secondary-color;
+    }
+}

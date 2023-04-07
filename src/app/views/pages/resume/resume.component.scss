@@ -1,0 +1,82 @@
+@use '../../../../assets/scss/config/index' as *;
+
+.resume {
+	.resume-title {
+		font-size: 26px;
+		font-weight: 400;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		font-weight: bold;
+		color: $darker-color;
+		padding: 20px 0px 10px 0px;
+	}
+	.resume-item {
+		padding: 0 0 20px 20px;
+		margin-top: -2px;
+		border-left: 2px solid $primary-color;
+		position: relative;
+		h4 {
+			line-height: 18px;
+			font-size: 18px;
+			font-weight: 600;
+			color: $primary-color;
+			margin-bottom: 10px;
+		}
+		h5 {
+			font-size: 16px;
+			background: $white-color;
+			padding: 5px 15px;
+			display: inline-block;
+			font-weight: 600;
+			margin-bottom: 10px;
+			color: $primary-color;
+		}
+		ul {
+			padding-left: 20px;
+			li {
+				padding-bottom: 10px;
+			}
+		}
+		&:last-child {
+			padding-bottom: 0;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			width: 16px;
+			height: 16px;
+			border-radius: 50px;
+			left: -9px;
+			top: 0;
+			background: #fff;
+			border: 2px solid $secondary-color;
+		}
+	}
+}
+
+.about {
+	.content {
+		h3 {
+			font-weight: 700;
+			font-size: 26px;
+			color: $primary-color;
+		}
+		ul {
+			list-style: none;
+			padding: 0;
+			li {
+				padding-bottom: 10px;
+			}
+			i {
+				font-size: 20px;
+				padding-right: 2px;
+				color: $primary-color;
+			}
+		}
+		p {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

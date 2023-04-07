@@ -1,0 +1,175 @@
+<section class="about h-auto">
+  <div class="container" data-aos="fade-up">
+    <div class="-mx-4 mt-9">
+      <div class="w-full px-4">
+        <div class="mx-auto mb-[60px] max-w-[510px] text-center">
+          <span class="text-blackColor mb-2 block text-lg font-semibold">
+            About
+          </span>
+          <h2 class="primary-color mb-4 text-3xl font-bold sm:text-4xl md:text-[40px]">
+            Get To Know Me
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="md:flex items-center gap-10">
+      <div class="col-lg-3">
+        <div class="overflow-hidden w-[350px] h-[350px] rounded-md bg-primary-color">
+          <img class="img-fluid"
+            src="https://firebasestorage.googleapis.com/v0/b/mayaramein-portfolio.appspot.com/o/projects%2Fabout-me.png?alt=media&token=1eed87ad-90f9-425f-af8b-42a1cc9708f5"
+            alt="">
+        </div>
+      </div>
+      <div class="col-lg-9 pt-4 pt-lg-0 content">
+        <div class=" md:flex gap-10">
+          <div class="col-lg-6">
+            <ul>
+              <li><i class="bi bi-rounded-right"></i> <strong><i class="fa-solid fa-cake-candles"></i>
+                  Birthday:</strong> 24 June 1998</li>
+              <li><i class="bi bi-rounded-right"></i> <strong><i class="fa-solid fa-globe"></i> Website:</strong>
+                www.mayaramein.com</li>
+              <li><i class="bi bi-rounded-right"></i> <strong><i class="fa-brands fa-whatsapp"></i> Phone:</strong>
+                (+20) 102 954 5294</li>
+              <li><i class="bi bi-rounded-right"></i> <strong><i class="fa-solid fa-location-dot"></i>
+                  Location:</strong> Cairo, Egypt</li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <ul>
+              <li><i class="bi bi-rounded-right"></i> <strong><i class="fa-solid fa-graduation-cap"></i> Current
+                  Degree:</strong> Master</li>
+              <li><i class="bi bi-rounded-right"></i> <strong><i class="fa-solid fa-building-columns"></i> Academic
+                  Email:</strong> mayarmohsan_psw@fci.helwan.edu.eg</li>
+              <li><i class="bi bi-rounded-right"></i> <strong><i class="fa-solid fa-envelope"></i> Contact
+                  Email:</strong> mayaramein@outlook.com</li>
+              <li><i class="bi bi-rounded-right"></i> <strong><i class="fa-solid fa-laptop"></i> Freelance:</strong>
+                Available</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="about" class="w-screen overflow-hidden lg:pt-[120px] lg:pb-[60px]">
+
+  <div class="-mx-4 mt-6">
+    <div class="w-full px-4">
+      <div class="mx-auto mb-[30px] max-w-[400px] text-center">
+        <h2 class="primary-color mb-4 text-3xl font-bold sm:text-4xl md:text-[40px]">
+          My Journey
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div class="mr-0 flex items-start flex-row">
+    <div class="w-full h-full">
+      <div class="relative  overflow-hidden p-10 h-full">
+        <div class="hidden md:flex justify-center">
+          <div class="w-24 h-24 bg-white border-2 border-secondaryColor rounded-full">
+            <img class="p-3" src="" alt="logo" />
+          </div>
+        </div>
+        <div class="invisible md:visible border-2-2 border-yellow-555 absolute h-full border"
+          style="right: 50%; border: 2px solid #FFC100; border-radius: 1%;"></div>
+        <span class="invisible md:visible border-2-2 border-yellow-555 absolute h-full border"
+          style="left: 50%; border: 2px solid #FFC100; border-radius: 1%;"></span>
+        <div *ngFor="let item of subscribe | async">
+          <div [style.display]="item.display">
+            <ng-container *ngIf="item.direction; then Dright; else Dleft"></ng-container>
+            <ng-template #Dright>
+              <div class="mb-8 block md:flex justify-between items-center w-full">
+                <div
+                  class="w-[370px] h-[400px] md:w-[600px] md:h-[650px] items-center justify-center rounded-md overflow-hidden">
+                  <div class="card">
+                    <div class="card--image">
+                      <img class="img-fluid" src="{{item.imgUrl}}" alt="image">
+                    </div>
+                    <div class="card--info info--1">
+                      <div class="icon">
+                        <i class="fa-solid fa-plus light-color"></i>
+                      </div>
+                      <div class="info--image">
+                        <img class="img-fluid" src="{{item.img_1}}" alt="info image">
+                      </div>
+                    </div>
+                    <div class="card--info info--2">
+                      <div class="icon">
+                        <i class="fa-solid fa-plus light-color"></i>
+                      </div>
+                      <div class="info--image">
+                        <img class="img-fluid" src="{{item.img_2}}" alt="info image">
+                      </div>
+                    </div>
+                    <div class="card--info info--3">
+                      <div class="icon">
+                        <i class="fa-solid fa-plus light-color"></i>
+                      </div>
+                      <div class="info--image">
+                        <img class="img-fluid" src="{{item.img_3}}" alt="info image">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="order-1 md:w-5/12 px-1 py-4 text-left">
+                  <h4 class="mb-3 font-bold text-lg md:text-2xl">{{item.title}}</h4>
+                  <ul *ngFor="let iteme of item.description">
+                    <li><i class="fa-regular fa-circle-check primary-color"></i> {{iteme}}</li>
+                  </ul>
+                </div>
+              </div>
+            </ng-template>
+            <ng-template #Dleft>
+              <div class="mb-8 block md:flex justify-between flex-row-reverse items-center w-full">
+                <div
+                  class="w-[350px] h-[350px] md:w-[600px] md:h-[650px] items-center justify-center rounded-md overflow-hidden">
+                  <div class="card">
+                    <div class="card--image">
+                      <img class="img-fluid" src="{{item.imgUrl}}" alt="image">
+                    </div>
+                    <div class="card--info info--1">
+                      <div class="icon">
+                        <i class="fa-solid fa-plus light-color"></i>
+                      </div>
+                      <div class="info--image">
+                        <img class="img-fluid" src="{{item.img_1}}" alt="info image">
+                      </div>
+                    </div>
+                    <div class="card--info info--2">
+                      <div class="icon">
+                        <i class="fa-solid fa-plus light-color"></i>
+                      </div>
+                      <div class="info--image">
+                        <img class="img-fluid" src="{{item.img_2}}" alt="info image">
+                      </div>
+                    </div>
+                    <div class="card--info info--3">
+                      <div class="icon">
+                        <i class="fa-solid fa-plus light-color"></i>
+                      </div>
+                      <div class="info--image">
+                        <img class="img-fluid" src="{{item.img_3}}" alt="info image">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="order-1 md:w-5/12 px-1 py-4 md:text-right " md:dir="rtl">
+                  <h4 class="mb-3 font-bold text-lg md:text-2xl">{{item.title}}</h4>
+                  <ul *ngFor="let iteme of item.description">
+                    <li><i class="fa-regular fa-circle-check primary-color"></i> {{iteme}}</li>
+                  </ul>
+                </div>
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+      <div class="hidden md:flex justify-center text-primaryColor">
+        <img src="" class="w-24 h-24 p-1 border-secondaryColor border-2 rounded-full" alt="me">
+      </div>
+    </div>
+  </div>
+</section>

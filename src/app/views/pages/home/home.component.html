@@ -1,0 +1,64 @@
+<div class="home ">
+  <section id="hero"
+    class="relative flex flex-col  md:flex-row justify-center text-center md:text-left h-[595px] w-full bg-gradient-to-t from-lighterColor">
+    <span class="invisible md:visible absolute 
+  rounded-md
+  bg-secondary-color
+  primary-color
+  shadow-lg
+  shadow-secondaryColor/50
+  lg:top-[9em]
+  lg:right-[26em]
+  justify-center
+  items-center">
+      <i class="fa-solid 
+            fa-code
+            text-primaryColor
+            p-3
+            text-xl">
+      </i>
+    </span>
+    <span class="invisible md:visible absolute 
+ rounded-md
+ bg-secondary-color
+ primary-color
+ shadow-lg
+ shadow-secondary-color/50
+ top-[12em]
+ right-[2em]
+ justify-center
+ items-center">
+      <i class="fa-solid 
+           fa-pen-nib
+           text-primaryColor
+           p-3
+           text-xl">
+      </i>
+    </span>  <div class="flex-2">
+      <div class="primary-color h-auto md:pl-48 pt-12 md:pt-48 space-y-4">
+        <h2 class="inline text-lg md:text-2xl">Hello, My name is </h2>
+        <h1 class="inline text-3xl md:text-5xl font-bold primary-color">Mayar Amein</h1>
+        <div>
+          <h2 class="block md:inline text-lg md:text-2xl">and I'm </h2>
+          <h1 class="block md:inline text-3xl md:text-5xl font-bold primary-color" id="text">
+            <ngtypewriter [StringList]='phrases' [speed]='2000'></ngtypewriter>
+          </h1>
+        </div>
+      </div>
+      <div class="grid md:block m-6 md:m-0 md:pl-24 md:mt-24 md:ml-24 md:space-x-4">
+        <a href=""
+          target="_blank"
+          class="bg-primary-color mt-[20px] px-12 py-4 text-white text-xl rounded-md hover:underline hover:underline-offset-[8px]">Are
+          you Hiring?</a>
+        <a routerLink="/contact" target="_blank"
+          class="bg-primary-color mt-[20px] px-12 py-4 text-white text-xl rounded-md hover:underline hover:underline-offset-[8px]">Need
+          a Freelancer?</a>
+      </div>
+    </div>
+    <div class="flex-1 overflow-hidden">
+      <img class="invisible lg:visible absolute bottom-0 right-0 w-3/4 lg:w-[33em]"
+        src=""
+        alt="hero">
+    </div>
+  </section>
+</div>

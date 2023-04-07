@@ -1,0 +1,252 @@
+<section class="resume overflow-hidden">
+  <div class="container p-9" data-aos="fade-up">
+    <div class="section-title">
+      <section class="relative about h-auto">
+        <a href="https://firebasestorage.googleapis.com/v0/b/mayaramein-portfolio.appspot.com/o/main%2FMayar%20Mohsen.pdf?alt=media&token=d9fcc8d6-a1b7-4962-9001-b4f8367ed636"
+          target="_black" class="absolute right-0 bg-primary-color light-color p-3 rounded-md"><i
+            class="fa-solid fa-download"></i> Download resume</a>
+        <div class="container" data-aos="fade-up">
+          <div class="md:flex items-center gap-10">
+            <div class="col-lg-9 pt-4 pt-lg-0 content">
+              <h1 class="text-5xl font-extrabold">Mayar Mohsen Mohamed</h1>
+              <h3 class="mb-3">Software Engineer</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <h3 class="resume-title">Profile</h3>
+    <div *ngFor="let item of subscribe | async" class="row">
+      <div *ngIf="item.type == 'Profile'" class="col-lg-6">
+        <div class="mb-3">
+          <h4 class="font-semibold pb-3 primary-color">{{item.title}}</h4>
+          <ul *ngFor="let iteme of item.desc">
+            <li><i class="fa-regular fa-circle-check primary-color"></i> {{iteme}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="resume-title">Work Experience</h3>
+    <div *ngFor="let item of subscribe | async" class="row">
+      <div *ngIf="item.type == 'work'" class="col-lg-6">
+        <div class="resume-item mb-3">
+          <ng-container *ngIf="item.current; then Current; else Past"></ng-container>
+          <ng-template #Past>
+            <div>
+              <h4 class="inline">{{item.title}}</h4>
+              <a href="{{item.achievement_link}}" target="_blank" class="primary-color mx-3 p-1"><i
+                  class="fa-solid fa-trophy"></i></a>
+            </div>
+            <p class=" inline text-base font-semibold">{{item.org_name}},<em class="text-sm"> {{item.location}}</em></p>
+            <a href="{{item.org_link}}" target="_blank" class="primary-color mx-3 p-1"><i
+                class="fa-solid fa-link"></i></a>
+            <p class="mb-6 text-base">{{item.start_date.toDate() | date: 'MMM yyyy'}} - {{item.end_date.toDate() | date:
+              'MMM yyyy'}}</p>
+          </ng-template>
+          <ng-template #Current>
+            <h4>{{item.title}}</h4>
+            <p class=" inline text-base font-semibold">{{item.org_name}},<em class="text-sm"> {{item.location}}</em></p>
+            <a href="{{item.org_link}}" target="_blank" class="primary-color mx-3 p-1"><i
+                class="fa-solid fa-link"></i></a>
+            <p class="mb-6 text-base">{{item.start_date.toDate() | date: 'MMM yyyy'}} - Present</p>
+          </ng-template>
+
+          <p class="font-semibold">Responsibilities:</p>
+          <ul *ngFor="let iteme of item.desc">
+            <li><i class="fa-regular fa-circle-check primary-color"></i> {{iteme}}</li>
+          </ul>
+          <p class="font-semibold">Key Achievements:</p>
+          <ul *ngFor="let iteme of item.key_achievement">
+            <li><i class="fa-solid fa-circle-check primary-color"></i> {{iteme}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="resume-title">Education</h3>
+    <div *ngFor="let item of subscribe | async" class="row">
+      <div *ngIf="item.type == 'Education'" class="col-lg-6">
+        <div class="resume-item mb-3">
+          <ng-container *ngIf="item.current; then Current; else Past"></ng-container>
+          <ng-template #Current>
+            <h4>{{item.title}}</h4>
+            <p class=" inline text-base font-semibold">{{item.org_name}},<em class="text-sm"> {{item.location}}</em></p>
+            <a href="{{item.org_link}}" target="_blank" class="primary-color mx-3 p-1"><i
+                class="fa-solid fa-link"></i></a>
+            <p class="mb-6 text-base">{{item.start_date.toDate() | date: 'MMM yyyy'}} - {{item.end_date.toDate() | date:
+              'MMM yyyy'}}</p>
+          </ng-template>
+          <ng-template #Past>
+            <div>
+              <h4 class="inline">{{item.title}}</h4>
+              <a href="{{item.achievement_link}}" target="_blank" class="primary-color mx-3 p-1"><i
+                  class="fa-solid fa-award"></i></a>
+            </div>
+            <p class=" inline text-base font-semibold">{{item.org_name}},<em class="text-sm"> {{item.location}}</em></p>
+            <a href="{{item.org_link}}" target="_blank" class="primary-color mx-3 p-1"><i
+                class="fa-solid fa-link"></i></a>
+            <p class="mb-6 text-base">{{item.start_date.toDate() | date: 'MMM yyyy'}} - Present</p>
+          </ng-template>
+
+          <p class="font-semibold">Responsibilities:</p>
+          <ul *ngFor="let iteme of item.desc">
+            <li><i class="fa-regular fa-circle-check primary-color"></i> {{iteme}}</li>
+          </ul>
+          <p class="font-semibold">Key Achievements:</p>
+          <ul *ngFor="let iteme of item.key_achievement">
+            <li><i class="fa-solid fa-circle-check primary-color"></i> {{iteme}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="resume-title">Projects</h3>
+    <div *ngFor="let item of subscribe | async" class="row">
+      <div *ngIf="item.type == 'project'" class="col-lg-6">
+        <div class="resume-item mb-3">
+          <ng-container *ngIf="item.current; then Current; else Past"></ng-container>
+          <ng-template #Current>
+            <h4>{{item.title}}</h4>
+            <p class=" inline text-base font-semibold">{{item.org_name}},<em class="text-sm"> {{item.location}}</em></p>
+            <p class="mb-6 text-base">{{item.start_date.toDate() | date: 'MMM yyyy'}} - {{item.end_date.toDate() | date:
+              'MMM yyyy'}}</p>
+          </ng-template>
+          <ng-template #Past>
+            <div>
+              <h4 class="inline">{{item.title}}</h4>
+              <a href="{{item.achievement_link}}" target="_blank" class="primary-color mx-3 p-1"><i
+                  class="fa-solid fa-trophy"></i> Preview</a>
+            </div>
+            <p class=" inline text-base font-semibold">{{item.org_name}},<em class="text-sm"> {{item.location}}</em></p>
+            <a href="{{item.org_link}}" target="_blank" class="primary-color mx-3 p-1"><i
+                class="fa-solid fa-link"></i></a>
+            <p class="mb-6 text-base">{{item.start_date.toDate() | date: 'MMM yyyy'}} - Present</p>
+          </ng-template>
+
+          <p class="font-semibold">Project description:</p>
+          <ul *ngFor="let iteme of item.desc">
+            <li><i class="fa-regular fa-circle-check primary-color"></i> {{iteme}}</li>
+          </ul>
+          <p class="font-semibold">Achieved responsibilities:</p>
+          <ul *ngFor="let iteme of item.key_achievement">
+            <li><i class="fa-solid fa-circle-check primary-color"></i> {{iteme}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="resume-title">Awards</h3>
+    <div *ngFor="let item of subscribe | async" class="row">
+      <div *ngIf="item.type == 'award'" class="col-lg-6">
+        <div class="resume-item mb-3">
+          <div>
+            <h4 class="inline">{{item.title}}</h4>
+            <a href="{{item.achievement_link}}" target="_blank" class="primary-color mx-3 p-1"><i
+                class="fa-solid fa-trophy"></i></a>
+          </div>
+          <p class="text-base font-semibold inline">{{item.org_name}}</p>
+          <a href="{{item.org_link}}" target="_blank" class="primary-color mx-3 p-1"><i
+              class="fa-solid fa-link"></i></a>
+          <p class="mb-6 text-base inline">{{item.start_date.toDate() | date: 'MMM yyyy'}}</p>
+          <ul *ngFor="let iteme of item.desc">
+            <li><i class="fa-solid fa-circle-check primary-color"></i> {{iteme}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="resume-title">Courses</h3>
+    <div *ngFor="let item of subscribe | async" class="row">
+      <div *ngIf="item.type == 'course'" class="col-lg-6">
+        <div class="resume-item mb-3">
+          <ng-container *ngIf="item.current; then Current; else Past"></ng-container>
+          <ng-template #Current>
+            <h4>{{item.title}}</h4>
+            <p class=" inline text-base font-semibold">{{item.org_name}},<em class="text-sm"> {{item.location}}</em></p>
+            <a href="{{item.org_link}}" target="_blank" class="primary-color mx-3 p-1"><i
+                class="fa-solid fa-link"></i></a>
+            <p class="mb-6 text-base">{{item.start_date.toDate() | date: 'MMM yyyy'}} - {{item.end_date.toDate() | date:
+              'MMM yyyy'}}</p>
+          </ng-template>
+          <ng-template #Past>
+            <div>
+              <h4 class="inline">{{item.title}}</h4>
+              <a href="{{item.achievement_link}}" target="_blank" class="primary-color mx-3 p-1"><i
+                  class="fa-solid fa-award"></i></a>
+            </div>
+            <p class=" inline text-base font-semibold">{{item.org_name}},<em class="text-sm"> {{item.location}}</em></p>
+            <a href="{{item.org_link}}" target="_blank" class="primary-color mx-3 p-1"><i
+                class="fa-solid fa-link"></i></a>
+            <p class="mb-6 text-base">{{item.start_date.toDate() | date: 'MMM yyyy'}} - Present</p>
+          </ng-template>
+          <p class="font-semibold">Outcomes:</p>
+          <ul *ngFor="let iteme of item.key_achievement">
+            <li><i class="fa-solid fa-circle-check primary-color"></i> {{iteme}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="resume-title">Addintional Information</h3>
+    <div *ngFor="let item of subscribe | async" class="row">
+      <div *ngIf="item.type == 'additional'" class="col-lg-6">
+        <div class="resume-item mb-3">
+          <ng-container *ngIf="item.current; then Current; else Past"></ng-container>
+          <ng-template #Past>
+            <div>
+              <h4 class="inline">{{item.title}}</h4>
+              <a href="{{item.achievement_link}}" target="_blank" class="primary-color mx-3 p-1"><i
+                  class="fa-solid fa-trophy"></i></a>
+            </div>
+            <p class=" inline text-base font-semibold">{{item.org_name}},<em class="text-sm"> {{item.location}}</em></p>
+            <a href="{{item.org_link}}" target="_blank" class="primary-color mx-3 p-1"><i
+                class="fa-solid fa-link"></i></a>
+            <p class="mb-6 text-base">{{item.start_date.toDate() | date: 'MMM yyyy'}} - {{item.end_date.toDate() | date:
+              'MMM yyyy'}}</p>
+          </ng-template>
+          <ng-template #Current>
+            <h4>{{item.title}}</h4>
+            <p class=" inline text-base font-semibold">{{item.org_name}},<em class="text-sm"> {{item.location}}</em></p>
+            <a href="{{item.org_link}}" target="_blank" class="primary-color mx-3 p-1"><i
+                class="fa-solid fa-link"></i></a>
+            <p class="mb-6 text-base">{{item.start_date.toDate() | date: 'MMM yyyy'}} - Present</p>
+          </ng-template>
+
+          <p class="font-semibold">Responsibilities:</p>
+          <ul *ngFor="let iteme of item.desc">
+            <li><i class="fa-regular fa-circle-check primary-color"></i> {{iteme}}</li>
+          </ul>
+          <p class="font-semibold">Key Achievements:</p>
+          <ul *ngFor="let iteme of item.key_achievement">
+            <li><i class="fa-solid fa-circle-check primary-color"></i> {{iteme}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="resume-title">Extra-curricular Activities</h3>
+    <div *ngFor="let item of subscribe | async" class="row">
+      <div *ngIf="item.type == 'volunteer'" class="col-lg-6">
+        <div class="resume-item mb-3">
+          <h4>{{item.title}}</h4>
+          <p class="text-base font-semibold">{{item.org_name}},<em class="text-sm"> {{item.location}}</em></p>
+          <p class="mb-6 text-base">{{item.start_date.toDate() | date: 'MMM yyyy'}} - {{item.end_date.toDate() | date:
+            'MMM yyyy'}}</p>
+          <p class="font-semibold">Responsibilities:</p>
+          <ul *ngFor="let iteme of item.desc">
+            <li><i class="fa-regular fa-circle-check primary-color"></i> {{iteme}}</li>
+          </ul>
+          <p class="font-semibold">Key Achievements:</p>
+          <ul *ngFor="let iteme of item.key_achievement">
+            <li><i class="fa-solid fa-circle-check primary-color"></i> {{iteme}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <h3 class="resume-title">Refrences</h3>
+    <h4>References available upon request.</h4>
+  </div>
+  <app-footer></app-footer>
+</section>

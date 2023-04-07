@@ -1,0 +1,37 @@
+<!-- <nav class="bg-primary-color  hidden md:block overflow-hidden w-screen py-2"> 
+    <div class="flex flex-row text-center justify-between px-12">
+    <a href = "mailto: mayaramein@outlook.com" class="light-color">
+      <i class="fa-solid fa-envelope  px-3 pl-0"></i> mayaramein@outlook.com
+    </a>
+    <a href = "https://wa.link/8fyewm" target="_blank" class="light-color">
+      <i class="fa-brands fa-whatsapp"></i> [+20] 102 954 5294
+    </a>
+    </div>
+  </nav> -->
+
+  <nav id="nav-bar" class="bg-glass-blur h-24 py-5 z-50"> 
+    <!-- Flex container -->
+    <div class="flex px-12 items-center justify-between">
+      <!-- Logo -->
+      <div class="bg-primary-color pt-2 w-16 h-16 rounded-full">
+        <a routerLink="/home">       
+          <img class="p-3 pt-2.5" src="https://firebasestorage.googleapis.com/v0/b/mayaramein-portfolio.appspot.com/o/main%2FlogoIconwhite.png?alt=media&token=580e7a12-507a-4c6e-844f-053e4742a35f" alt="logo" />
+        </a>
+      </div>
+      <div [hidden]="!isOpen" class="primary-color md:pl-40 text-lg space-x-2 md:space-x-9 md:flex">
+        <a routerLink="/home" class="hover:underline hover:underline-offset-[10px]">Home</a>
+        <!-- <a routerLink="/developer" class="hover:underline hover:underline-offset-[10px]">Developer</a> -->
+        <!-- <a routerLink="/freelancer" class="hover:underline hover:underline-offset-[10px]">Freelancer</a> -->
+        <a routerLink="/portfolio" class="hover:underline hover:underline-offset-[10px]">Portfolio</a>
+        <a routerLink="/about" class="hover:underline hover:underline-offset-[10px]">About</a>
+      </div>
+      <div class="primary-color hidden md:block">
+        <a routerLink="/resume" target="_blank" class="primary-color border-primary-color font-bold  px-8 py-3 mr-4 text-md bg-white rounded-md hover:underline hover:underline-offset-[8px]">
+          <!-- <a href="https://firebasestorage.googleapis.com/v0/b/mayaramein-portfolio.appspot.com/o/main%2FMayar%20Mohsen.pdf?alt=media&token=d9fcc8d6-a1b7-4962-9001-b4f8367ed636" target="_blank" class="primary-color border-primary-color font-bold  px-8 py-3 mr-4 text-md bg-white rounded-md hover:underline hover:underline-offset-[8px]"> -->
+          Resume</a>
+        <a routerLink="/contact" target="_blank" class="primary-color border-primary-color font-bold px-7 py-3  text-md rounded-md hover:underline bg-white hover:underline-offset-[8px]">Contact</a>
+      </div>
+      <a (click)="openMobileMenu()" class="z-20 flex flex-col space-y-1 md:hidden cursor-pointer">
+        <i class="fa-solid fa-bars text-2xl primary-color"></i> </a>
+    </div>
+  </nav>
